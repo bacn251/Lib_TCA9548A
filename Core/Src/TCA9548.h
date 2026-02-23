@@ -21,7 +21,7 @@
 
 
 #define TCA9548A_ADDR(a2, a1, a0) \
-    (TCA9548A_BASE_ADDR | ((a2 & 0x01) << 2) | ((a1 & 0x01) << 1) | (a0 & 0x01))
+    ((TCA9548A_BASE_ADDR | ((a2 & 0x01) << 2) | ((a1 & 0x01) << 1) | (a0 & 0x01)) << 1)
 typedef struct {
     I2C_HandleTypeDef* hi2c;
     uint8_t address;
